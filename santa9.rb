@@ -13,7 +13,6 @@ def map(graph_i, current = nil, visited = [])
     vals = remaining.map do |location|
         #array + [location] stores a temp version of the array, so it is reverted once it is returned
         graph_i[current][location] + map(graph_i, location, visited + [location])
-        #graph_i[current][location] + map(graph_i, location, visited + [location])
     end
 
     return vals.min

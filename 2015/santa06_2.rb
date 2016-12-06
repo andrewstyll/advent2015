@@ -39,7 +39,7 @@ f.each_line do |line|
                 lights_grid[x][y] += 1
             elsif op == "off"
                 if lights_grid[x][y] > 0
-                    lights_grid[x][y] -= 1
+                lights_grid[x][y] -= 1
                 end
             else
                 lights_grid[x][y] += 2

@@ -185,24 +185,33 @@ def breadthFirst(newAgenda, searchAgenda, visited)
 end
 
 def test(newAgenda, searchAgenda, visited)
+    start = Time.now
     tmp = State.new(0, [1, 2], [0,0])
     searchAgenda << tmp
     visited[tmp.key] = tmp
     breadthFirst(newAgenda, searchAgenda, visited)
+    finish = Time.now
+    puts "test time: #{finish-start}"
 end
 
 def part1(newAgenda, searchAgenda, visited)
+    start = Time.now
     tmp = State.new(0, [0, 1, 1, 1, 1], [0, 2, 2, 2, 2])
     searchAgenda << tmp
     visited[tmp.key] = tmp
     breadthFirst(newAgenda, searchAgenda, visited)
+    finish = Time.now
+    puts "part1 time: #{finish-start}"
 end
 
 def part2(newAgenda, searchAgenda, visited)
+    start = Time.now
     tmp = State.new(0, [0, 1, 1, 1, 1, 0, 0], [0, 2, 2, 2, 2, 0, 0])
     searchAgenda << tmp
     visited[tmp.key] = tmp
     breadthFirst(newAgenda, searchAgenda, visited)
+    finish = Time.now
+    puts "part2 time: #{finish-start}"
 end
 
 test(newAgenda, searchAgenda, visited)

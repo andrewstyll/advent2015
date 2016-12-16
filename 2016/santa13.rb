@@ -54,7 +54,7 @@ class Move
         depth = state.depth
         #check up down left and right from my current spot
         newState = State.new(state.y-1, state.x, depth+1)
-        if(checkState(newState, newState.y, newState.x, visited) && newState.y >= 0 )
+        if(newState.y >= 0 && checkState(newState, newState.y, newState.x, visited))
             moves << newState
         end
 
@@ -64,7 +64,7 @@ class Move
         end
         
         newState = State.new(state.y, state.x-1, depth+1)
-        if(checkState(newState, newState.y, newState.x, visited) && newState.x >= 0)
+        if(newState.x >= 0 && checkState(newState, newState.y, newState.x, visited))
             moves << newState
         end
         
@@ -87,8 +87,10 @@ def breadthFirst(newAgenda, searchAgenda, visited)
                 #break
             end
         end
-        if(newAgenda[0].depth == 49)
-            puts "visited: #{visited.length-1}"
+        if(newAgenda[0].depth == 50)
+            puts "visited: #{visited.length}"
+            visited.each_value do |v|
+            end
             break
         end
         if(solved)

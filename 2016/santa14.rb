@@ -87,5 +87,5 @@ def findHashes2(hashHash)
     puts index
 end
 
-#findHashes(hashHash)
+findHashes(hashHash)
 findHashes2(hashHash)
